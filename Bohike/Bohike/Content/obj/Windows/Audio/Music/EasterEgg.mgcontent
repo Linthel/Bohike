@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>C:/Users/Eva Goodnight/Desktop/Bohike/Bohike/Bohike/Content/Audio/Music/EasterEgg.ogg</SourceFile>
+  <SourceTime>2018-09-14T02:02:28.636403+02:00</SourceTime>
+  <DestFile>C:/Users/Eva Goodnight/Desktop/Bohike/Bohike/Bohike/Content/bin/Windows/Audio/Music/EasterEgg.xnb</DestFile>
+  <DestTime>2018-09-24T13:51:54.6083263+02:00</DestTime>
+  <Importer>OggImporter</Importer>
+  <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
+  <Processor>SongProcessor</Processor>
+  <ProcessorTime>2017-03-01T16:05:36+01:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput>
+    <string>C:/Users/Eva Goodnight/Desktop/Bohike/Bohike/Bohike/Content/bin/Windows/Audio/Music/EasterEgg.wma</string>
+  </BuildOutput>
+</PipelineBuildEvent>

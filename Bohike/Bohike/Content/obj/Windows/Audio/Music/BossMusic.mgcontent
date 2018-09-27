@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>C:/Users/Eva Goodnight/Desktop/Bohike/Bohike/Bohike/Content/Audio/Music/BossMusic.ogg</SourceFile>
+  <SourceTime>2018-09-16T15:59:35.4298355+02:00</SourceTime>
+  <DestFile>C:/Users/Eva Goodnight/Desktop/Bohike/Bohike/Bohike/Content/bin/Windows/Audio/Music/BossMusic.xnb</DestFile>
+  <DestTime>2018-09-24T13:51:58.7033213+02:00</DestTime>
+  <Importer>OggImporter</Importer>
+  <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
+  <Processor>SongProcessor</Processor>
+  <ProcessorTime>2017-03-01T16:05:36+01:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput>
+    <string>C:/Users/Eva Goodnight/Desktop/Bohike/Bohike/Bohike/Content/bin/Windows/Audio/Music/BossMusic.wma</string>
+  </BuildOutput>
+</PipelineBuildEvent>

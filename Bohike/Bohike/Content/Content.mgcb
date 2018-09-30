@@ -13,18 +13,6 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin Audio/Music/GameMusic.wav
-/importer:WavImporter
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:Audio/Music/GameMusic.wav
-
-#begin Audio/Music/MenuMusic.ogg
-/importer:OggImporter
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:Audio/Music/MenuMusic.ogg
-
 #begin Audio/Sound/Player/Attack1.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
@@ -493,48 +481,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Video/Effects/ShadowExplosionTiny.png
-
-#begin Audio/Music/WaterLevelMusic.ogg
-/importer:OggImporter
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:Audio/Music/WaterLevelMusic.ogg
-
-#begin Audio/Music/HubWorldMusic.ogg
-/importer:OggImporter
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:Audio/Music/HubWorldMusic.ogg
-
-#begin Audio/Music/BossMusic.ogg
-/importer:OggImporter
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:Audio/Music/BossMusic.ogg
-
-#begin Audio/Music/FireLevelMusic.ogg
-/importer:OggImporter
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:Audio/Music/FireLevelMusic.ogg
-
-#begin Audio/Music/TempleMusic.ogg
-/importer:OggImporter
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:Audio/Music/TempleMusic.ogg
-
-#begin Audio/Music/EarthLevelMusic.ogg
-/importer:OggImporter
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:Audio/Music/EarthLevelMusic.ogg
-
-#begin Audio/Music/AirLevelMusic.ogg
-/importer:OggImporter
-/processor:SongProcessor
-/processorParam:Quality=Best
-/build:Audio/Music/AirLevelMusic.ogg
 
 #begin Video/Backgrounds/LevelWater/StaticBackground.png
 /importer:TextureImporter
@@ -1406,4 +1352,10 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Video/Effects/GroundPoundExplosion.png
+
+#begin Audio/Music/TribalMusic.ogg
+/importer:OggImporter
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Audio/Music/TribalMusic.ogg
 

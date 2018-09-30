@@ -105,11 +105,10 @@ namespace Bohike.Tilemap
                     }
 
                     _width = (x + 1) * size;
-
                     _height = (y + 1) * size;
                 }
         }
-    
+
         public void Draw(SpriteBatch spriteBatch)
         {
             foreach (var tile in _collisionTiles)

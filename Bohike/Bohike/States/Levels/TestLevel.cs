@@ -31,13 +31,9 @@ namespace Bohike.States.Levels
         private bool _easterEggMusicIsPlaying;
         private float _easterEggTimer;
 
-        #region Load Content
-
         public TestLevel(Game1 game, GraphicsDevice graphicsDevice, ContentManager content) : base(game, graphicsDevice, content)
         {
-            _camera = new Camera();
-
-            // --- TEXTURES ---
+            #region Textures
 
             var texture = _content.Load<Texture2D>("Square");
             var playerTexture = _content.Load<Texture2D>("Video/Player/Player");
@@ -53,9 +49,11 @@ namespace Bohike.States.Levels
             _midBackgroundPosition = new Vector2(0, 0);
             _farBackgroundPosition = new Vector2(0, 0);
 
-            // --- SOUND ---
+            #endregion
 
-            var backgroundMusic = _content.Load<Song>("Audio/Music/FireLevelMusic");
+            #region Sound
+
+            var backgroundMusic = _content.Load<Song>("Audio/Music/ThemeSong");
 
             var levelSoundEffects = new List<SoundEffect>()
             {
@@ -148,9 +146,11 @@ namespace Bohike.States.Levels
             };
 
             _soundManager = new SoundManager(backgroundMusic, levelSoundEffects);
-            _soundManager.PlayMusic();
+            //_soundManager.PlayMusic();
 
-            // --- HURTBOXES ---
+            #endregion
+
+            #region Hurtboxes
 
             var groundPound = _content.Load<Texture2D>("Video/Hurtboxes/GroundPound");
             var fireWhirl = _content.Load<Texture2D>("Video/Effects/DefaultExplosion");
@@ -211,7 +211,9 @@ namespace Bohike.States.Levels
                 SoundManager = new SoundManager(backgroundMusic, spellSoundEffects),
             };
 
-            // --- COLLECTIBLES ---
+            #endregion
+
+            #region Collectibles
 
             var money = _content.Load<Texture2D>("Square");
             var moneyPrefab = new Money(money)
@@ -226,7 +228,9 @@ namespace Bohike.States.Levels
                 SoundManager = new SoundManager(backgroundMusic, spellSoundEffects),
             };
 
-            // --- ANIMATIONS ---
+            #endregion
+
+            #region Animations
 
             var playerAnimations = new Dictionary<string, Animation>()
             {
@@ -293,36 +297,9 @@ namespace Bohike.States.Levels
                 {"MoveLeft", new Animation(_content.Load<Texture2D>("Video/Enemies/Trap"), 1)},
             };
 
-            // --- MAP ---
+            #endregion
 
-            Tile.Content = _content;
-
-            _map = new Map()
-            {
-                Sound = new SoundManager(backgroundMusic, playerSoundEffects),
-            };
-
-            String inputTiles = File.ReadAllText("Levels/TestLevel/TestLevelTilemap.txt");
-
-            _gridWidth = 500;
-            _gridHeight = 50;
-            _grid = new int[_gridHeight, _gridWidth];
-
-            int i = 0, j = 0;
-            foreach (var row in inputTiles.Split('\n'))
-            {
-                j = 0;
-                foreach (var col in row.Trim().Split(','))
-                {
-                    _grid[i, j] = int.Parse(col.Trim());
-                    j++;
-                }
-                i++;
-            }
-
-            _map.Generate(_grid, _tileSize, _level);
-
-            // --- PLAYER ---
+            #region SpriteList
 
             _sprites = new List<Sprite>()
             {
@@ -356,12 +333,47 @@ namespace Bohike.States.Levels
                 },
             };
 
+            #endregion
+
+            #region Map
+
+            _camera = new Camera();
+
+            Tile.Content = _content;
+
+            _map = new Map()
+            {
+                Sound = new SoundManager(backgroundMusic, playerSoundEffects),
+            };
+
+            String inputTiles = File.ReadAllText("Levels/TestLevel/TestLevelTilemap.txt");
+
+            _gridWidth = 500;
+            _gridHeight = 50;
+            _grid = new int[_gridHeight, _gridWidth];
+
+            int i = 0, j = 0;
+            foreach (var row in inputTiles.Split('\n'))
+            {
+                j = 0;
+                foreach (var col in row.Trim().Split(','))
+                {
+                    _grid[i, j] = int.Parse(col.Trim());
+                    j++;
+                }
+                i++;
+            }
+
+            _map.Generate(_grid, _tileSize, _level);
+
             foreach (var tile in _map.CollisionTiles)
             {
                 _sprites.Add(tile);
             }
 
-            // --- ENEMIES ---
+            #endregion
+
+            #region Enemies
 
             String inputEnemies = File.ReadAllText("Levels/TestLevel/TestLevelEnemymap.txt");
 
@@ -638,7 +650,9 @@ namespace Bohike.States.Levels
                 i++;
             }
 
-            // --- USER INTERFACE ---
+            #endregion
+
+            #region UserInterface
 
             var playerPortraitTexture = _content.Load<Texture2D>("Video/UserInterface/PlayerInfo/PlayerHealth3");
 
@@ -660,21 +674,21 @@ namespace Bohike.States.Levels
                     PlayerHealth0 = _content.Load<Texture2D>("Video/UserInterface/PlayerInfo/PlayerHealth0"),
                 },
             };
+
+            #endregion
         }
-
-        #endregion
-
-        #region Draw
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            // --- STATIC BACKGROUND ---
+            #region StaticBackground
 
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.Opaque, SamplerState.LinearWrap);
             spriteBatch.Draw(_staticBackgroundTexture, new Rectangle(0, 0, Game1.ScreenWidth, Game1.ScreenHeight), new Rectangle(0, 0, _staticBackgroundTexture.Width, _staticBackgroundTexture.Height), Color.White);
             spriteBatch.End();
 
-            // --- FAR BACKGROUND ---
+            #endregion
+
+            #region FarBackgrounds
 
             //if (_easterEggTimer >= 23f)
             //    spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.Additive, SamplerState.LinearWrap);
@@ -695,7 +709,9 @@ namespace Bohike.States.Levels
             //        Color.White);
             //spriteBatch.End();
 
-            // --- MID BACKGROUND ---
+            #endregion
+
+            #region MidBackgrounds
 
             if (_easterEggTimer >= 23f)
                 spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.Additive, SamplerState.LinearWrap);
@@ -715,7 +731,9 @@ namespace Bohike.States.Levels
                     Color.White);
             spriteBatch.End();
 
-            // --- SPRITES ---
+            #endregion
+
+            #region Sprites
 
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.Additive, transformMatrix: _camera.Transform * Matrix.CreateScale(_cameraZoom));
             foreach (var sprite in _sprites)
@@ -755,7 +773,9 @@ namespace Bohike.States.Levels
             }
             spriteBatch.End();
 
-            // --- FRONT BACKGROUND ---
+            #endregion
+
+            #region FrontBackgrounds
 
             if (_easterEggTimer >= 23f)
                 spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.Additive, SamplerState.LinearWrap);
@@ -767,28 +787,38 @@ namespace Bohike.States.Levels
                 spriteBatch.Draw(_frontBackgroundTexture, new Rectangle(0, 0, Game1.ScreenWidth * 3, Game1.ScreenHeight * 3), new Rectangle((int)(_cameraTarget.X * 1f - _frontBackgroundPosition.X), (int)(_cameraTarget.Y * 1f - _frontBackgroundPosition.Y), _frontBackgroundTexture.Width, _frontBackgroundTexture.Height), Color.White);
             spriteBatch.End();
 
-            // --- USER INTERFACE ---
+            #endregion
+
+            #region UserInterface
 
             spriteBatch.Begin();
             foreach (var component in _components)
                 component.Draw(gameTime, spriteBatch);
             _game.GlobalVariables.Draw(spriteBatch);
             spriteBatch.End();
-        }
 
-        #endregion
+            #endregion
+        }
 
         #region Update
 
         public override void Update(GameTime gameTime)
         {
             StartEasterEgg(gameTime);
+            MoveBackgrounds();
 
-            foreach (var component in _components)
-                component.Update(gameTime);
+            foreach (var bossDoor in _sprites.Select(c => c as BossDoor))
+            {
+                if (bossDoor != null)
+                    if (bossDoor.GotTriggered)
+                    {
+                        _game.ChangeState(new BossRoom(_game, _graphicsDevice, _content));
+                    }
+            }
+
+            #region Updates
 
             ControlEnemies();
-            MoveBackgrounds();
 
             int spriteCount = _sprites.Count;
             for (int i = 0; i < spriteCount; i++)
@@ -800,19 +830,24 @@ namespace Bohike.States.Levels
                 sprite.Children = new List<Sprite>();
             }
 
+            foreach (var component in _components)
+                component.Update(gameTime);
+
             foreach (var sprite in _sprites)
             {
-                if ((float)Math.Sqrt((sprite.Position.X - _cameraTarget.X) * (sprite.Position.X - _cameraTarget.X) + (sprite.Position.Y - _cameraTarget.Y) * (sprite.Position.Y - _cameraTarget.Y)) < 1400)
+                if ((float)Math.Sqrt((sprite.Position.X - _cameraTarget.X) * (sprite.Position.X - _cameraTarget.X) + (sprite.Position.Y - _cameraTarget.Y) * (sprite.Position.Y - _cameraTarget.Y)) < 1500 - 100)
                 {
-                    if (!((sprite is Tile && sprite.CollisionType == CollisionTypes.TopFalling) || sprite is Hurtbox || sprite is Player || sprite is Explosion))
+                    if (!((sprite is Tile && sprite.CollisionType == CollisionTypes.TopFalling) || sprite is Hurtbox || sprite is Player || sprite is Explosion || sprite is Collectible))
                         sprite.Update(gameTime);
                 }
-                else if (!((sprite is Tile && sprite.CollisionType == CollisionTypes.TopFalling) || sprite is Hurtbox || sprite is Player || sprite is Explosion))
+                else if (!((sprite is Tile && sprite.CollisionType == CollisionTypes.TopFalling) || sprite is Hurtbox || sprite is Player || sprite is Explosion || sprite is Collectible))
                     sprite.Velocity = new Vector2(0,0);
 
-                if ((sprite is Tile && sprite.CollisionType == CollisionTypes.TopFalling) || sprite is Hurtbox || sprite is Player || sprite is Explosion)
+                if ((sprite is Tile && sprite.CollisionType == CollisionTypes.TopFalling) || sprite is Hurtbox || sprite is Player || sprite is Explosion || sprite is Collectible)
                     sprite.Update(gameTime);
             }
+
+            #endregion
         }
 
         private void MoveBackgrounds()
@@ -861,15 +896,6 @@ namespace Bohike.States.Levels
                     if (player.Health <= 0)
                         _game.ChangeState(new HubWorld(_game, _graphicsDevice, _content));
                 }
-            }
-
-            foreach (var bossDoor in _sprites.Select(c => c as BossDoor))
-            {
-                if (bossDoor != null)
-                    if (bossDoor.GotTriggered)
-                    {
-                        _game.ChangeState(new BossRoom(_game, _graphicsDevice, _content));
-                    }
             }
         }
 

@@ -19,7 +19,6 @@ namespace Bohike.Controls
         private bool _isHovering;
         private MouseState _previousMouse;
         private Texture2D _texture;
-
         //public Texture2D Texture2;
 
         #endregion

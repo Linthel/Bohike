@@ -47,7 +47,6 @@ namespace Bohike.Sprites
 
     public class Player : Sprite, ICollidable
     {
-      
         private KeyboardState _currentKeyboard;
         private KeyboardState _previousKeyboard;
         private GamePadState _currentGamePad;
@@ -988,7 +987,7 @@ namespace Bohike.Sprites
                 }
             }
 
-            if (_velocity.Y < 0 && !(sprite is Enemy))
+            if (_velocity.Y < 0)
             {
                 if (this.Rectangle.Top + this._velocity.Y < sprite.Rectangle.Bottom &&
                     this.Rectangle.Bottom > sprite.Rectangle.Bottom &&
@@ -1052,7 +1051,7 @@ namespace Bohike.Sprites
                     _onGround = true;
             }
 
-            if (_velocity.Y < 0 && !(sprite is Enemy))
+            if (_velocity.Y < 0)
             {
                 if (this.Rectangle.Top + this._velocity.Y < sprite.Rectangle.Bottom &&
                     this.Rectangle.Bottom > sprite.Rectangle.Bottom &&

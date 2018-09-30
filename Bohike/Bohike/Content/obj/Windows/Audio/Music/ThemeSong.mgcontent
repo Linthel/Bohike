@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Eva Goodnight/Desktop/Bohike/Bohike/Bohike/Content/Audio/Music/ThemeSong.ogg</SourceFile>
+  <SourceFile>C:/Users/Eva Goodnight/Desktop/Bohike(CopyrightFree)/Bohike/Bohike/Content/Audio/Music/ThemeSong.ogg</SourceFile>
   <SourceTime>2018-09-15T00:54:08.7837873+02:00</SourceTime>
-  <DestFile>C:/Users/Eva Goodnight/Desktop/Bohike/Bohike/Bohike/Content/bin/Windows/Audio/Music/ThemeSong.xnb</DestFile>
-  <DestTime>2018-09-24T13:51:55.5884243+02:00</DestTime>
+  <DestFile>C:/Users/Eva Goodnight/Desktop/Bohike(CopyrightFree)/Bohike/Bohike/Content/bin/Windows/Audio/Music/ThemeSong.xnb</DestFile>
+  <DestTime>2018-09-30T18:39:27.3352374+02:00</DestTime>
   <Importer>OggImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>SongProcessor</Processor>
@@ -15,6 +15,6 @@
   <Dependencies />
   <BuildAsset />
   <BuildOutput>
-    <string>C:/Users/Eva Goodnight/Desktop/Bohike/Bohike/Bohike/Content/bin/Windows/Audio/Music/ThemeSong.wma</string>
+    <string>C:/Users/Eva Goodnight/Desktop/Bohike(CopyrightFree)/Bohike/Bohike/Content/bin/Windows/Audio/Music/ThemeSong.wma</string>
   </BuildOutput>
 </PipelineBuildEvent>

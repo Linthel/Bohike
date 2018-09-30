@@ -55,7 +55,7 @@ namespace Bohike.States.Levels
 
             // --- SOUND ---
 
-            var backgroundMusic = _content.Load<Song>("Audio/Music/EarthLevelMusic");
+            var backgroundMusic = _content.Load<Song>("Audio/Music/TribalMusic");
 
             var levelSoundEffects = new List<SoundEffect>()
             {
@@ -148,7 +148,7 @@ namespace Bohike.States.Levels
             };
 
             _soundManager = new SoundManager(backgroundMusic, levelSoundEffects);
-            _soundManager.PlayMusic();
+            //_soundManager.PlayMusic();
 
             // --- HURTBOXES ---
 

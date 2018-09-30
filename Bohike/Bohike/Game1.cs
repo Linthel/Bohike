@@ -85,7 +85,8 @@ namespace Bohike
             ScreenWidth = graphics.PreferredBackBufferWidth;
             ScreenHeight = graphics.PreferredBackBufferHeight;
 
-            graphics.IsFullScreen = true;
+            Window.IsBorderless = true;
+
             graphics.ApplyChanges();
 
             base.Initialize();

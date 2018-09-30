@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Eva Goodnight/Desktop/Bohike/Bohike/Bohike/Content/Video/Enemies/Chests/ChestSmall.png</SourceFile>
+  <SourceFile>C:/Users/Eva Goodnight/Desktop/Bohike(CopyrightFree)/Bohike/Bohike/Content/Video/Enemies/Chests/ChestSmall.png</SourceFile>
   <SourceTime>2018-09-22T01:08:38.4392732+02:00</SourceTime>
-  <DestFile>C:/Users/Eva Goodnight/Desktop/Bohike/Bohike/Bohike/Content/bin/Windows/Video/Enemies/Chests/ChestSmall.xnb</DestFile>
-  <DestTime>2018-09-24T13:52:13.8719556+02:00</DestTime>
+  <DestFile>C:/Users/Eva Goodnight/Desktop/Bohike(CopyrightFree)/Bohike/Bohike/Content/bin/Windows/Video/Enemies/Chests/ChestSmall.xnb</DestFile>
+  <DestTime>2018-09-30T18:39:36.3758287+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
